@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
 import android.content.Context;
+import android.content.pm.ModuleInfo;
 
 import com.trianguloy.urlchecker.modules.list.ChangeLogModule;
 import com.trianguloy.urlchecker.modules.list.ClearUrlModule;
@@ -18,6 +19,7 @@ import com.trianguloy.urlchecker.modules.list.TextInputModule;
 import com.trianguloy.urlchecker.modules.list.UnshortenModule;
 import com.trianguloy.urlchecker.modules.list.UriPartsModule;
 import com.trianguloy.urlchecker.modules.list.VirusTotalModule;
+import com.trianguloy.urlchecker.modules.list.ShortenUrlModule;
 import com.trianguloy.urlchecker.modules.list.WebhookModule;
 import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 
@@ -49,6 +51,7 @@ public class ModuleManager {
         modules.add(new WebhookModule());
         // new modules should preferably be added directly above this line
         modules.add(new FlagsModule());
+        modules.add(new ShortenUrlModuleData());
         modules.add(new DebugModule());
 
         modules.add(new OpenModule());

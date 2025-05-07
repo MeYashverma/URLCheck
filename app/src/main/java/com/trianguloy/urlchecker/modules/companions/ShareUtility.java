@@ -74,12 +74,13 @@ public interface ShareUtility {
         /* ------------------- Buttons ------------------- */
 
         /** Shares the url as text */
-        public void shareUrl() {
+        public void shareUrl(String urlToShare) {
             // create send intent
             var sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, mainDialog.getUrlData().url);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, urlToShare != null ? urlToShare : mainDialog.getUrlData().url);
             sendIntent.setType("text/plain");
+
 
             // share intent
             var chooser = Intent.createChooser(sendIntent, mainDialog.getString(R.string.mOpen_share));
@@ -89,6 +90,11 @@ public interface ShareUtility {
                     mainDialog
             );
             if (closeSharePref.get()) {
+                mainDialog.finish();
+            }
+        }
+         public void shareUrl() {
+             if (closeSharePref.get()) {
                 mainDialog.finish();
             }
         }

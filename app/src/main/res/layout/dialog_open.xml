@@ -67,6 +67,16 @@
 
 
     <ImageButton
+        android:id="@+id/btn_shorten_and_share"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:contentDescription="@string/mOpen_shortenAndShare"
+        android:src="@drawable/link" />
+
+    <ImageButton
         android:id="@+id/share"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"

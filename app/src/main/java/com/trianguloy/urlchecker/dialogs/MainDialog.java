@@ -204,6 +204,17 @@ public class MainDialog extends Activity {
             view.setVisibility(visible ? View.VISIBLE : View.GONE);
         }
     }
+    /**
+     * Gets a module by its class.
+     * @param moduleClass the class of the module to get
+     * @return the module instance or null if not found
+     */
+    public <T extends AModuleDialog> T getModule(Class<T> moduleClass){
+        for(var module : modules.keySet()){
+            if(moduleClass.isInstance(module)) return (T) module;
+        }
+        return null;
+    }
 
     // ------------------- initialize -------------------
 
